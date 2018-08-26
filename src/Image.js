@@ -1,41 +1,41 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { SpinnerIcon } from "./icons";
+import { SpinnerIcon } from './icons';
 
-import { spinner } from "./styles";
+import { spinner } from './styles';
 
 export default class Image extends Component {
-  state = {
-    loading: true
-  };
+    state = {
+        loading: true
+    };
 
-  handleOnLoad = () => {
-    this.setState({ loading: false });
-  };
+    handleOnLoad = () => {
+        this.setState({ loading: false });
+    };
 
-  handleOnContextMenu = event => {
-    !this.props.contextMenu && event.preventDefault();
-  };
+    handleOnContextMenu = event => {
+        !this.props.contextMenu && event.preventDefault();
+    };
 
-  render() {
-    const { id, src, handleDoubleClick, styles } = this.props;
+    render() {
+        const { id, src, handleDoubleClick, styles } = this.props;
 
-    return (
-      <div>
-        {this.state.loading && (
-          <div style={spinner}>
-            <SpinnerIcon />
-          </div>
-        )}
-        <img
-          id={id}
-          src={src}
-          onLoad={this.handleOnLoad}
-          onDoubleClick={handleDoubleClick}
-          onContextMenu={this.handleOnContextMenu}
-          style={styles}
-        />
-      </div>
-    );
-  }
+        return (
+            <div>
+                {this.state.loading && (
+                    <div style={spinner}>
+                        <SpinnerIcon/>
+                    </div>
+                )}
+                <img
+                    id={id}
+                    src={src}
+                    onLoad={this.handleOnLoad}
+                    onDoubleClick={handleDoubleClick}
+                    onContextMenu={this.handleOnContextMenu}
+                    style={styles}
+                />
+            </div>
+        );
+    }
 }
