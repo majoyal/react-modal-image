@@ -5,7 +5,7 @@
 
 A _lightweight_ React component providing modal image Lightbox.
 
-[DEMO](https://aautio.github.io/react-modal-image/)
+[DEMO](https://majoyal.github.io/react-modal-image/)
 
 ## Features
 
@@ -75,5 +75,5 @@ const closeLightbox = () => {
 
 [build-badge]: https://img.shields.io/circleci/project/github/aautio/react-modal-image.svg
 [build]: https://circleci.com/gh/aautio/react-modal-image
-[npm-badge]: https://img.shields.io/npm/v/react-modal-image.svg
-[npm]: https://www.npmjs.org/package/react-modal-image
+[npm-badge]: https://img.shields.io/npm/v/@majoyal/react-modal-image.svg
+[npm]: https://www.npmjs.org/package/@majoyal/react-modal-image
