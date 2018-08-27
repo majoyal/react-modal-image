@@ -48,6 +48,7 @@ class Demo extends Component {
                         small="example_img_small.jpg"
                         medium="example_img_medium.jpg"
                         imageStyle={{ cursor: 'default' }}
+                        onClick={() => { console.log('Image clicked'); }}
                         renderTrigger={(onClick) => {
                             return (
                                 <button type="button" onClick={onClick}>

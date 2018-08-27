@@ -15,7 +15,7 @@ export default class extends Component {
     };
 
     render() {
-        const { className, small, smallSrcSet, medium, large, alt, containerStyle, imageStyle, renderTrigger } = this.props;
+        const { className, small, smallSrcSet, medium, large, alt, containerStyle, imageStyle, renderTrigger, onClick } = this.props;
         const { modalOpen } = this.state;
         const imageProps = {
             className,
@@ -27,6 +27,8 @@ export default class extends Component {
 
         if (typeof renderTrigger !== 'function') {
             imageProps.onClick = this.toggleModal;
+        } else if (typeof onClick === 'function') {
+            imageProps.onClick = onClick;
         }
 
         return (
