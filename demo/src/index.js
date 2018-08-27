@@ -41,6 +41,24 @@ class Demo extends Component {
                 </div>
                 <p>^ click or inspect the image above</p>
 
+                <h2>#4 with trigger render prop</h2>
+
+                <div style={{ maxWidth: '400px' }}>
+                    <ModalImage
+                        small="example_img_small.jpg"
+                        medium="example_img_medium.jpg"
+                        imageStyle={{ cursor: 'default' }}
+                        renderTrigger={(onClick) => {
+                            return (
+                                <button type="button" onClick={onClick}>
+                                    Click to enlarge
+                                </button>
+                            );
+                        }}
+                    />
+                </div>
+                <p>^ click or inspect the image above</p>
+
                 <h2>Further info</h2>
 
                 <p>
