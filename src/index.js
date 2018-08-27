@@ -15,19 +15,24 @@ export default class extends Component {
     };
 
     render() {
-        const { className, small, smallSrcSet, medium, large, alt, containerStyle } = this.props;
+        const { className, small, smallSrcSet, medium, large, alt, containerStyle, renderTrigger } = this.props;
         const { modalOpen } = this.state;
+        const imageProps = {
+            className,
+            style: smallImage,
+            src: small,
+            srcSet: smallSrcSet,
+            alt,
+        };
+
+        if (typeof renderTrigger !== 'function') {
+            imageProps.onClick = this.toggleModal;
+        }
 
         return (
             <div style={containerStyle}>
-                <img
-                    className={className}
-                    style={smallImage}
-                    onClick={this.toggleModal}
-                    src={small}
-                    srcSet={smallSrcSet}
-                    alt={alt}
-                />
+                <img {...imageProps} />
+                {renderTrigger && renderTrigger(this.toggleModal)}
                 {modalOpen && (
                     <Lightbox
                         medium={medium}
