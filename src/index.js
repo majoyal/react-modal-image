@@ -15,11 +15,11 @@ export default class extends Component {
     };
 
     render() {
-        const { className, small, smallSrcSet, medium, large, alt, containerStyle, renderTrigger } = this.props;
+        const { className, small, smallSrcSet, medium, large, alt, containerStyle, imageStyle, renderTrigger } = this.props;
         const { modalOpen } = this.state;
         const imageProps = {
             className,
-            style: smallImage,
+            style: { ...smallImage, ...imageStyle },
             src: small,
             srcSet: smallSrcSet,
             alt,
